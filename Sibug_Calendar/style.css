@@ -1,0 +1,78 @@
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+  background: #fff;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 50px;
+  justify-items: center; 
+  max-width: 1000px;
+  margin: 0 auto; 
+}
+
+
+.month {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+}
+
+
+.month.expanded {
+  width: 300px;
+  height: 300px;
+  grid-column: 1 / span 3;
+}
+
+.month h2 {
+  margin: 0;
+  padding: 10px 0;
+  color: white;
+  text-align: center;
+  background-color: #B3D9FF;
+}
+
+
+.days, .dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+
+.days div {
+  font-weight: bold;
+  padding: 5px 0;
+  background-color: #f4f4f4;
+}
+
+.dates div {
+  padding: 8px 0;
+}
+
+.month:nth-child(2) h2 { background-color: #FFB3B3; }
+.month:nth-child(3) h2 { background-color: #B3FFB3; }
+.month:nth-child(4) h2 { background-color: #D1C4E9; }
+.month:nth-child(5) h2 { background-color: #FFCCCB; }
+.month:nth-child(6) h2 { background-color: #ADD8E6; }
+.month:nth-child(7) h2 { background-color: #F4A6B6; }
+.month:nth-child(8) h2 { background-color: #FFD580; }
+.month:nth-child(9) h2 { background-color: #FFB6C1; }
+.month:nth-child(10) h2 { background-color: #FFCC99; }
+.month:nth-child(11) h2 { background-color: #D3D3D3; }
+.month:nth-child(12) h2 { background-color: #B2F2BB; }
