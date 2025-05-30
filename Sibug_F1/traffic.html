@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Light</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        .traffic-light {
+            display: flex;
+            flex-direction: column;
+            background-color: black;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .light {
+            width: 60px;
+            height: 60px;
+            margin: 10px auto;
+            border-radius: 50%;
+            background-color: gray;
+        }
+        .red { background-color: red; }
+        .yellow { background-color: yellow; }
+        .green { background-color: green; }
+    </style>
+</head>
+<body>
+    <div class="traffic-light">
+        <div class="light" id="red"></div>
+        <div class="light" id="yellow"></div>
+        <div class="light" id="green"></div>
+    </div>
+    <script>
+        const lights = ["red", "yellow", "green"];
+        const times = [6000, 7000, 9000]; // Red: 6s, Yellow: 7s, Green: 9s
+        let currentIndex = 0;
+
+        function changeLight() {
+            lights.forEach(light => document.getElementById(light).style.backgroundColor = "gray");
+            document.getElementById(lights[currentIndex]).style.backgroundColor = lights[currentIndex];
+            setTimeout(changeLight, times[currentIndex]);
+            currentIndex = (currentIndex + 1) % lights.length;
+        }
+        changeLight();
+    </script>
+</body>
+</html>
